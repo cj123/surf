@@ -1,0 +1,20 @@
+access_token: <some api key>
+
+droplets:
+  - name: "mission-critical-droplet" # must match the name of the droplet in the dashboard
+    snapshots:
+      - interval: 24h
+        keep: 168h     # 1 week
+        note: "daily"
+        poweroff: false
+      - interval: 168h # 1 week
+        keep: 672h     # 4 weeks
+        note: "weekly"
+        poweroff: false
+
+  - name: "less-important-droplet"
+    snapshots:
+      - interval: 24h
+        keep: 48h
+        note: "daily"
+        poweroff: false
